@@ -1,0 +1,15 @@
+server:
+  port: 2021
+spring:
+  application:
+    name: feign-provider
+  cloud:
+    consul:
+      host: 192.168.139.128
+      port: 8500
+      discovery:
+        enabled: true
+        instanceId: ${spring.application.name}
+        healthCheckInterval: 15s
+        heartbeat:
+          enabled: true
