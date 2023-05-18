@@ -1,8 +1,8 @@
 server:
-  port: 2021
+  port: 8083
 spring:
   application:
-    name: feign-provider
+    name: gateway
   cloud:
     consul:
       host: 192.168.20.128
