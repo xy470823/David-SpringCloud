@@ -13,3 +13,23 @@ spring:
         healthCheckInterval: 15s
         heartbeat:
           enabled: true
+    gateway:
+      routes:
+        - id: system  # 请求 http://localhost:8083/system/user/info 会转发到 system 服务
+          uri: lb://system  #在服务注册中心找服务名为 zhufeng-web-user 的服务
+          predicates:
+            - Path=/system/**  # 设置路由断言,当请求 /user/info 时进行转发
+        - id: feign-provider
+          uri: lb://feign-provider
+          predicates:
+            - Path=/feign-provider/**
+        - id: feign-consumer
+          uri: lb://feign-consumer
+          predicates:
+            - Path=/feign-consumer/**
+        - id: netty-server
+          uri: lb://netty-server
+          predicates:
+            - Path=/netty-server/**
+          filters:
+            - StripPrefix=1  # 前缀， 在当前路径匹配中表示去掉第一个前缀 /route
