@@ -12,10 +12,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.zbank</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>common-basic</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
         </dependency>
 
         <dependency>
@@ -74,4 +72,30 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <configuration>
+                    <mainClass>com.zbank.consumer.FeignConsumerApplication</mainClass>
+                    <layout>JAR</layout>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>*.yml</include>
+                    <include>*.xml</include>
+                    <include>*/*.yml</include>
+                    <include>*/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
 </project>

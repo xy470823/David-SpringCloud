@@ -2,17 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>David-SpringCloud</artifactId>
         <groupId>com.zbank</groupId>
+        <artifactId>David-SpringCloud</artifactId>
         <version>1.0</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
-    <modules>
-        <module>cloud-system</module>
-    </modules>
-    <artifactId>cloud-modules</artifactId>
-    <packaging>pom</packaging>
+
+    <artifactId>cloud-gateway</artifactId>
 
     <dependencies>
         <dependency>
@@ -77,7 +74,32 @@
             <groupId>com.ecwid.consul</groupId>
             <artifactId>consul-api</artifactId>
         </dependency>
-
-
     </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <configuration>
+                    <mainClass>com.zbank.Main</mainClass>
+                    <layout>JAR</layout>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>*.yml</include>
+                    <include>*.xml</include>
+                    <include>*/*.yml</include>
+                    <include>*/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
 </project>
