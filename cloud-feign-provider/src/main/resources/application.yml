@@ -5,11 +5,11 @@ spring:
     name: feign-provider
   cloud:
     consul:
-      host: 192.168.139.128
+      host: 192.168.20.128
       port: 8500
       discovery:
         enabled: true
-        instanceId: ${spring.application.name}
+        instanceId: ${spring.application.name}:${server.port}
         healthCheckInterval: 15s
         heartbeat:
           enabled: true

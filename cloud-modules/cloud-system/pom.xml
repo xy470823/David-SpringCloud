@@ -15,5 +15,32 @@
 
     <artifactId>cloud-system</artifactId>
     <packaging>jar</packaging>
-
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <configuration>
+                    <mainClass>com.zbank.SystemApplication</mainClass>
+                    <layout>JAR</layout>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>*.properties</include>
+                    <include>*.yml</include>
+                    <include>*.xml</include>
+                    <include>*/*.properties</include>
+                    <include>*/*.yml</include>
+                    <include>*/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
 </project>
