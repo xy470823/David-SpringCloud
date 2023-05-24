@@ -12,6 +12,7 @@
         <module>cloud-modules</module>
         <module>cloud-netty</module>
         <module>cloud-gateway</module>
+        <module>cloud-xxl-job</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -43,6 +44,7 @@
         <lombok.version>1.18.26</lombok.version>
         <netty-all.version>5.0.0.Alpha2</netty-all.version>
         <common-netty.version>1.0</common-netty.version>
+        <mysql.version>8.0.32</mysql.version>
     </properties>
 
     <dependencyManagement>
@@ -218,6 +220,13 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
                 <version>${commons-collections4.version}</version>
+            </dependency>
+
+            <!-- mysql数据连接依赖 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
