@@ -1,3 +1,5 @@
+ddns:
+  host: xiongdw.tpddns.cn
 server:
   port: 2022
 spring:
@@ -5,7 +7,7 @@ spring:
     name: feign-consumer
   cloud:
     consul:
-      host: 192.168.20.128
+      host: ${ddns.host}
       port: 8500
       discovery:
         enabled: true
