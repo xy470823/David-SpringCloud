@@ -15,13 +15,13 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
-public class LocalCache<T> implements ApplicationRunner, Serializable {
+public class LocalCache implements ApplicationRunner, Serializable {
 
     private static final long serialVersionUID = 4445556632565335L;
 
-    private static Logger logger = LoggerFactory.getLogger(LocalCache.class);
+    private static final Logger logger = LoggerFactory.getLogger(LocalCache.class);
 
-    private static final TransmittableThreadLocal<Map<String, Object>> ThreadLocal = new TransmittableThreadLocal();
+    private static final TransmittableThreadLocal<Map<String, Object>> ThreadLocal = new TransmittableThreadLocal<>();
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
