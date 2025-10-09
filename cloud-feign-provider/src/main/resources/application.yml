@@ -1,5 +1,5 @@
 ddns:
-  host: xiongdw.tpddns.cn
+  host: xiongdw.online
 server:
   port: 2021
 spring:
