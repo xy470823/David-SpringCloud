@@ -3,6 +3,7 @@ package com.zbank.cache;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.ttl.TransmittableThreadLocal;
+import com.zbank.EurekaApplication;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +27,7 @@ public class LocalCache<T> implements ApplicationRunner, Serializable {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         logger.info("项目启动时加载本地缓存数据");
-        set("ServerName", "SystemApplication");
+        set("ServerName", EurekaApplication.class.getName());
         logger.info("项目启动时加载本地缓存完成:{}", JSON.toJSONString(ThreadLocal.get()));
     }
 
