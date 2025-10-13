@@ -80,7 +80,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.zbank.EurekaApplication</mainClass>
+                    <mainClass>com.zbank.feigna.EurekaFeignbApplication</mainClass>
                     <layout>JAR</layout>
                 </configuration>
             </plugin>

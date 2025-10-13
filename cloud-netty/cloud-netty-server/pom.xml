@@ -25,7 +25,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.zbank.NettyServerApplication</mainClass>
+                    <mainClass>com.zbank.feigna.NettyServerApplication</mainClass>
                     <layout>JAR</layout>
                 </configuration>
             </plugin>

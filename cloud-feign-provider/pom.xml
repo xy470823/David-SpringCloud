@@ -68,7 +68,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.zbank.provider.FeignProviderApplication</mainClass>
+                    <mainClass>com.zbank.feigna.provider.FeignProviderApplication</mainClass>
                     <layout>JAR</layout>
                 </configuration>
             </plugin>

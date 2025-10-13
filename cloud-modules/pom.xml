@@ -10,7 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>cloud-system</module>
-        <module>cloud-eureka</module>
+        <module>cloud-eureka-feign-a</module>
+        <module>cloud-eureka-feign-b</module>
     </modules>
     <artifactId>cloud-modules</artifactId>
     <packaging>pom</packaging>

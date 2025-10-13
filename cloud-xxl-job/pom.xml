@@ -81,7 +81,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.zbank.JobApplication</mainClass>
+                    <mainClass>com.zbank.feigna.JobApplication</mainClass>
                     <layout>JAR</layout>
                 </configuration>
             </plugin>
