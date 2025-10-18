@@ -62,6 +62,10 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.snowflake</groupId>
+            <artifactId>snowflake-spring-boot-starter</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

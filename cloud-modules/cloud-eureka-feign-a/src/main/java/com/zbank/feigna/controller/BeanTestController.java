@@ -1,7 +1,6 @@
 package com.zbank.feigna.controller;
 
 import com.zbank.feigna.config.SnowflakeConfig;
-import com.zbank.feigna.feigncient.TestServiceClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,26 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 @RestController
-@RequestMapping("/test")
-public class TestController {
+@RequestMapping("/beanTest")
+public class BeanTestController {
 
-    private static final Logger logger = LoggerFactory.getLogger(TestController.class);
-
-    @Resource
-    private TestServiceClient testServiceClient;
+    private static final Logger logger = LoggerFactory.getLogger(BeanTestController.class);
 
     @Resource
     private SnowflakeConfig snowflakeConfig;
-
-    @GetMapping("/hello")
-    public String hello() {
-        return testServiceClient.hello();
-    }
-
-    @GetMapping("/ticket")
-    public String getTicket() {
-        return testServiceClient.getTicket();
-    }
 
     @GetMapping("/getId")
     public String getId() {
