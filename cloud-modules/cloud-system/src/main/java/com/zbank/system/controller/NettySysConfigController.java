@@ -1,9 +1,9 @@
-package com.zbank.feigna.controller;
+package com.zbank.system.controller;
 
 
 import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.util.DateUtils;
-import com.zbank.feigna.service.NettyService;
+import com.zbank.system.service.NettyService;
 import com.zbank.feigna.vo.ResponseTestVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

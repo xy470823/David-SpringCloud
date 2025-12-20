@@ -260,11 +260,6 @@
             </dependency>
 
 
-            <dependency>
-                <groupId>com.github.snowflake</groupId>
-                <artifactId>snowflake-spring-boot-starter</artifactId>
-                <version>1.2.0</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 

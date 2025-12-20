@@ -1,4 +1,4 @@
-package com.zbank.feigna.service;
+package com.zbank.system.service;
 
 
 import com.alibaba.fastjson2.JSONObject;

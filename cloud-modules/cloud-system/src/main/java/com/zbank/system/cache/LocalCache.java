@@ -1,4 +1,4 @@
-package com.zbank.feigna.cache;
+package com.zbank.system.cache;
 
 
 import com.alibaba.fastjson2.JSON;
