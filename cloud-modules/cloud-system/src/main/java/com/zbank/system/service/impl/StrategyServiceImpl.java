@@ -6,12 +6,14 @@ import com.zbank.system.service.vo.StrategyResponse;
 import com.zbank.system.service.vo.TaskContext;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+@Service
 public class StrategyServiceImpl implements StrategyService {
 
     @Resource
@@ -34,7 +36,7 @@ public class StrategyServiceImpl implements StrategyService {
         context.getNameList().forEach(name -> {
             CompletableFuture<StrategyResponse> future = CompletableFuture.supplyAsync(() -> {
                 CharcTask task = new CharcTask();
-                return task.apply(context);
+                return task.apply(name,context);
             }, nameListExecutor).exceptionally(ex -> {
                 // 异常处理：返回默认值
                 System.err.println("任务异常: " + ex.getMessage());
@@ -48,8 +50,7 @@ public class StrategyServiceImpl implements StrategyService {
         );
         // 等待所有任务完成
         allDoneFuture.join();
-
-        futures.forEach(e-> System.out.printf(e.toString()));
+        futures.forEach(e-> System.out.println(e.toString()));
         return null;
     }
 
